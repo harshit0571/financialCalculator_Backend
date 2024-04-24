@@ -5,6 +5,7 @@ const cors = require("cors");
 const app = express();
 const AuthRoutes = require("./routes/AuthRoutes");
 const LoanRoutes = require("./routes/LoanRoutes");
+const DebtRoutes = require("./routes/DebtRatioRoutes");
 
 connection.connect((err) => {
   if (err) throw err;
@@ -20,6 +21,7 @@ app.use(express.json());
 //routes
 app.use("/auth", AuthRoutes);
 app.use("/loan", LoanRoutes);
+app.use("/debt", DebtRoutes);
 
 // app.use("*", (req, res) => {
 //   res.render("404");
